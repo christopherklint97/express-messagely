@@ -15,7 +15,7 @@ const { ensureLoggedIn } = require("../middleware/auth");
  * Make sure that the currently-logged-in users is either the to or from user.
  *
  **/
-router.get("/:id", ensureLoggedIn, async function (res, res, next) {
+router.get("/:id", ensureLoggedIn, async function (req, res, next) {
   try {
     let username = req.user.username;
     let msg = await Message.get(req.params.id);
